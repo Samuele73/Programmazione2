@@ -49,16 +49,15 @@ void Gara::controlla(int t) {
     int massimo= veicoli[0]->getVelocita();
     int index=0;
     for(int i=1; i<t; i++){
-        if(veicoli[i]->getVelocita()>massimo)
+        if(veicoli[i]->getVelocita()>massimo){
             massimo= veicoli[i]->getVelocita();
             index=i;
+        }
     }
-     Veicolo * d= veicoli[index];
+    Veicolo * d= veicoli[index];
     veicoli[index]= veicoli[t-1];
     veicoli[t-1]= d;
-    //std::cout<< "veloc: "<<veicoli[t-1]->getVelocita()<< std::endl;
     controlla(t-1);
-
 
 }
 
@@ -83,8 +82,10 @@ void Gara::partenza() {
 }
 
 void Gara::stampaClassifica() {
-	for(int i=numeroIscritti-1; i>=0; i--){
-        std::cout<< veicoli[i]->getVelocita() << std::endl;
-	}
+	std::cout << "Stampa Classifica..." << std::endl;
+    for(int i = numeroIscritti-1; i>=0; i--){
+        static int b=1;
+        std::cout << b++ << " posizione: " << *veicoli[i] << " con velocita' " << veicoli[i]->getVelocita() << std::endl;
+    }
 
 }
