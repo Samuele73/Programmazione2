@@ -12,8 +12,8 @@ class Gara {
 	Veicolo ** veicoli;
 
 	public:
-    void controlla(int t);
-    void controlla();
+    	void controlla(int t);
+    	void controlla();
 	Gara(int durata, int partecipanti) : durata(durata), numeroPartecipanti(partecipanti) {
 		veicoli = new Veicolo*[numeroPartecipanti];
 		numeroIscritti = 0;
