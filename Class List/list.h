@@ -36,34 +36,31 @@ class List {
 	}
 
 	void deleteNode(int i){
-        if(i>=0 && i<length){
-            Node<T> *current = head;
-            if(i == 0){
-                head = head->getNext();
-                delete current;
-                return;
-            }
-            Node<T> *previous = head;
-            current = current->getNext();
-            for(int j=1; j<i; j++){
+		if(i>=0 && i<length){
+		    Node<T> *current = head;
+		    if(i == 0){
+			head = head->getNext();
+			delete current;
+			return;
+		    }
+		    Node<T> *previous = head;
+		    current = current->getNext();
+		    for(int j=1; j<i; j++){
 
-                current = current->getNext();
-                previous = previous->getNext();
-            }
-            //previous= current->getNext();
-            //Node<T> j= current->getNext
-            previous->setNext(current->getNext());
-            delete current;
-            return;
-
-        }
-        else{
-            cout<< "Indice fuori dalla lista. Reinseliscilo!"<< endl;
-            cin>> i;
-            cout<< endl;
-            deleteNode(i);
-            return;
-        }
+			current = current->getNext();
+			previous = previous->getNext();
+		    }
+		    previous->setNext(current->getNext());
+		    delete current;
+		    return;
+		}
+		else{
+		    cout<< "Indice fuori dalla lista. Reinseliscilo!"<< endl;
+		    cin>> i;
+		    cout<< endl;
+		    deleteNode(i);
+		    return;
+		}
 	}
 
 
