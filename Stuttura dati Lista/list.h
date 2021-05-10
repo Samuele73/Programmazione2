@@ -41,6 +41,7 @@ class List {
 		    if(i == 0){
 			head = head->getNext();
 			delete current;
+			length--;
 			return;
 		    }
 		    Node<T> *previous = head;
@@ -52,6 +53,7 @@ class List {
 		    }
 		    previous->setNext(current->getNext());
 		    delete current;
+		    length--;
 		    return;
 		}
 		else{
