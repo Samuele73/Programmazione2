@@ -43,7 +43,7 @@ class Studente {
 
 	Studente(string cognome, string nome, string matricola, int eta) :
 		cognome(cognome), nome(nome), matricola(matricola), eta(eta) {}
-    Studente() :Studente("", "", "", 0) {}  //Non avrebbe funzionato il bubbleSort dato che non vi era costruttore con 0 parametri
+        Studente() :Studente("", "", "", 0) {}  //Non avrebbe funzionato il bubbleSort dato che non vi era costruttore con 0 parametri
 
 	string getCognome() const { return cognome; }
 	string getNome() const { return nome; }
